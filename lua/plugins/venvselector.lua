@@ -1,3 +1,5 @@
+if true then return {} end
+
 return {
   "linux-cultist/venv-selector.nvim",
   dependencies = {
