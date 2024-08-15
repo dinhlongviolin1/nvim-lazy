@@ -1,3 +1,3 @@
-rm -rf ~/.local/share
-rm -rf ~/.local/state
-rm -rf ~/.cache
+rm -rf ~/.local/share/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.cache/nvim
