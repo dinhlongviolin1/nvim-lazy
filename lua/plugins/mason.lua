@@ -2,7 +2,6 @@ return {
   "williamboman/mason.nvim",
   opts = {
     ensure_installed = {
-      "harper-ls",
       "sourcery",
       "clang-format",
       -- "ast-grep",
@@ -12,6 +11,7 @@ return {
       -- "autoflake",
       -- "autopep8",
       -- "black",
+      -- "harper-ls",
       -- "flake8",
       -- "isort",
       -- "mypy",
