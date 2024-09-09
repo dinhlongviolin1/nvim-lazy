@@ -4,6 +4,7 @@ return {
     ensure_installed = {
       "sourcery",
       "clang-format",
+      "html-lsp",
       -- "ast-grep",
       -- "typescript-language-server",
       -- "prettier",
