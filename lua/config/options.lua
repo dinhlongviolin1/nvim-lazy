@@ -5,3 +5,6 @@ vim.g.autoformat = false
 
 -- vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 vim.g.root_spec = { { ".git", "lua" }, "cwd" }
+
+-- disable animations when moving around
+vim.g.snacks_animate = false
