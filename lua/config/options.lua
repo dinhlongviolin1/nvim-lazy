@@ -8,3 +8,5 @@ vim.g.root_spec = { { ".git", "lua" }, "cwd" }
 
 -- disable animations when moving around
 vim.g.snacks_animate = false
+
+-- vim.opt.termguicolors = true
