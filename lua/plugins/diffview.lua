@@ -9,7 +9,7 @@ return {
 
       -- Optional: auto-expand small groups so you don't see “+6 keymaps”
       -- Show items when a group has ≤ 10 mappings (tune to taste)
-      opts.expand = 2
+      opts.expand = 0
     end,
   },
   {
