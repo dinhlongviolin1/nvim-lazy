@@ -5,7 +5,7 @@ return {
     { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
   },
   lazy = false,
-  branch = "regexp",
+  branch = "main",
   keys = {
     { "<leader>cv", "<cmd>VenvSelect<cr>", desc = "Select Python Virtual Env" },
   },
