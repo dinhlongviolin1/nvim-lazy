@@ -1,13 +1,25 @@
+-- On Omarchy, plugins/theme.lua takes over the colorscheme (dynamically, via
+-- `omarchy theme set`) — don't also declare one here or the two collide.
+-- Everywhere else (Mac, Ubuntu Z13, ...) that file is a no-op and this wins.
+local on_omarchy = vim.fn.filereadable(vim.fn.expand("~/.local/state/omarchy/current/theme/neovim.lua")) == 1
+
 return {
+  -- Harmless to keep installed even on Omarchy (aether.nvim is what actually
+  -- renders there) — just never set as the active colorscheme in that case.
   { "Mofiqul/dracula.nvim" },
   {
     "LazyVim/LazyVim",
-    opts = {
+    opts = on_omarchy and {} or {
       colorscheme = "dracula",
     },
     init = function()
+      -- Also matches "aether" — Omarchy 4's git-cloned-theme mechanism (which
+      -- is how this Dracula install actually got applied) renders every theme,
+      -- Dracula included, through a shared aether.nvim colorscheme rather than
+      -- Mofiqul/dracula.nvim, so these overrides need to fire under that name
+      -- too or they'd silently stop applying under Omarchy.
       vim.api.nvim_create_autocmd("ColorScheme", {
-        pattern = "dracula",
+        pattern = { "dracula", "aether" },
         callback = function()
           -- === Core Diff Groups ===
           vim.api.nvim_set_hl(0, "DiffAdd",      { fg = "#00ff00", bg = "#003300", bold = true })
